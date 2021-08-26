@@ -1,0 +1,16 @@
+<h3>Players Name</h3>
+
+{% if name_list %}
+<ul>
+  {% for n in name_list %}
+    <li>
+      <a href="{% url 'players:playerdetail' n.identifier %}">{{ n.firstName }}  {{ n.lastName }}</a>
+    </li>
+  {% endfor %}
+</ul>
+{% else %}
+  <p>No Players are available.</p>
+{% endif %}
+
+<a href="{% url 'players:createplayer' %}">Create Player</a>
+

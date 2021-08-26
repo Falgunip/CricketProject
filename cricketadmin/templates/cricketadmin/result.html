@@ -1,0 +1,63 @@
+<style>
+
+table, th, td {
+  margin: auto;
+  style: align:center;
+  border: 1px solid black;
+  border-collapse: collapse;
+  outline:1px solid black;
+}
+th, td {
+  padding: 15px;
+  text-align:center;
+}
+th{
+height: 90px;
+font-size:20px;
+color:blue
+}
+.border{
+padding:15px;
+border: 1px solid sienna;
+outline:1px dotted sienna;
+}
+.paging_style{
+text-align:center;
+font-size: 18px;
+}
+</style>
+
+<div style="text-align:center; font-size:25px">
+  <h3>Matches Fixtures</h3><br>
+</div>
+
+<form method="GET">
+  {% csrf_token %}
+    <div style="text-align:center">
+    <h2>Result for {{state}} Championship</h2><br>
+      <div class="table">
+           <table class="table">
+               <tr>
+                   <th>Date</th>
+                   <th>Match</th>
+                   <th>Team A</th>
+                   <th>Team B</th>
+                   <th>Score of Team A</th>
+                   <th>Score of Team B</th>
+                   <th>Winner of the Match</th>
+               </tr>
+                  <tr>
+                      <td><h4>{{random_date}}</h4></td>
+                      <td><h4>{{randomMatch}}</h4></td>
+                      <td><h4>{{team_a}}</h4></td>
+                      <td><h4>{{team_b}}</h4></td>
+                      <td><h4>{{score_a}}</h4></td>
+                      <td><h4>{{score_b}}</h4></td>
+                      <td><h4>{{winner_team}}</h4></td>
+                  </tr>
+             </table><br><br>
+      </div>
+        <a href="{% url 'cricketadmin:index' %}" style="font-size: 20px;">Draw Again</a>
+    </div>
+
+</form>

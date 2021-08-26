@@ -1,0 +1,26 @@
+<style>
+.block{
+font-size:20px;
+}
+</style>
+
+<div style="text-align:center; font-size:25px">
+  <h3>Matches Fixtures</h3><br><br>
+</div>
+
+<form action="{% url 'cricketadmin:result' %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+    <div class="block">
+     <div style="text-align:center">
+    <label>Tournament Draw:   </label>
+    <select name="club_state" id="club_state" style="height:50px; font-size:18px">
+        <option disabled selected value>   -- select an option -- </option>
+        <option value="State Level">  State Championship</option>
+        <option value="National Level"> National Championship</option>
+        <option value="International Level">International Championship</option>
+    </select><br><br>
+    <input type="submit" value="Draw" style="font-size:20px"><br><br>
+    </div>
+    </div>
+
+</form>

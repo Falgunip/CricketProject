@@ -1,0 +1,15 @@
+<h3>Teams Name</h3>
+
+{% if name_list %}
+<ul>
+  {% for n in name_list %}
+    <li>
+      <a href="{% url 'teams:teamdetail' n.identifier %}">{{ n.teamName }}</a>
+    </li>
+  {% endfor %}
+</ul>
+{% else %}
+  <p>No Teams are available.</p>
+{% endif %}
+
+<a href="{% url 'teams:createteam' %}">Create Team</a>

@@ -1,0 +1,24 @@
+
+<div style="text-align: center">
+<h1>Player Detail Information</h1>
+</div>
+
+
+       <img align="right" src="/media/{{p.imageUri}}" style="width:200px;height:200px"><br><br>
+       <label><b>First Name: </b></label>{{p.firstName}}<br><br>
+       <label><b>Last Name: </b></label>{{p.lastName}}<br><br>
+<!--       <div style="text-align:right"><label><b>Profile Pic: </b></label></div>-->
+       <label><b>Player Jersey Number:  </b></label>{{p.player_jersey_number}}<br><br>
+       <label><b>Country: </b></label>{{p.country}}<br><br>
+       <label><b>Matches: </b></label>{{p.matches}}<br><br>
+       <label><b>Run: </b></label>{{p.run}}<br><br>
+       <label><b>Highest Scores: </b></label>{{p.highest_scores}}<br><br><br>
+
+
+<a href="{% url 'teams:index'  %}">Back to Team List Page</a><br><br>
+
+<a href="{% url 'players:index' %}">Back to Player List Page</a>
+
+
+
+

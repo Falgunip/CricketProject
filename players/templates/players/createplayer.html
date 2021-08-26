@@ -1,0 +1,90 @@
+<div style="text-align:center">
+  <h1>Create Player</h1>
+</div>
+
+<form action="{% url 'players:save' %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <label for="firstName">First Name: </label>
+  <input type="text" id="firstName" name="firstName"><br><br>
+  <label for="lastName">Last Name: </label>
+  <input type="text" id="lastName" name="lastName"><br><br>
+  <label for="imageUri">Profile Pic: </label>
+  <input type="file" id="imageUri" name="imageUri"><br><br>
+  <label for="player_jersey_number">Player Jersey Number: </label>
+  <input type="text" id="player_jersey_number" name="player_jersey_number"><br><br>
+  <label for="country">Country: </label>
+   <select name="country" id="country" style="height:30px;">
+        <option disabled selected value> -- select an option -- </option>
+        <option value="Afghanistan">Afghanistan</option>
+        <option value="Albania">Albania</option>
+        <option value="Algeria">Algeria</option>
+        <option value="Andorra">Andorra</option>
+        <option value="Angola">Angola</option>
+        <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+       <option value="Argentina">Argentina</option>
+        <option value="Armenia">Armenia</option>
+        <option value="Australia">Australia</option>
+        <option value="Austria">Austria</option>
+        <option value="Azerbaijan">Azerbaijan</option>
+        <option value="Bahamas">Bahamas</option>
+       <option value="Bahrain">Bahrain</option>
+        <option value="Bangladesh">Bangladesh</option>
+        <option value="Barbados">Barbados</option>
+        <option value="Belarus">Belarus</option>
+        <option value="Belgium">Belgium</option>
+        <option value="Belize">Belize</option>
+       <option value="Benin">Benin</option>
+        <option value="Bhutan">Bhutan</option>
+        <option value="Brazil">Brazil</option>
+        <option value="Bulgaria">Bulgaria</option>
+        <option value="Canada">Canada</option>
+        <option value="China">China</option>
+       <option value="Colombia">Colombia</option>
+        <option value="Costa Rica">Costa Rica</option>
+        <option value="Denmark">Denmark</option>
+        <option value="Egypt">Egypt</option>
+        <option value="Estonia">Estonia</option>
+        <option value="Ethiopia">Ethiopia</option>
+       <option value="Faroe Islands">Faroe Islands</option>
+        <option value="France">France</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Germany">Germany</option>
+        <option value="Greece">Greece</option>
+        <option value="India">India</option>
+       <option value="Italy">Italy</option>
+        <option value="Japan">Japan</option>
+        <option value="Malaysia">Malaysia</option>
+        <option value="Singapore">Singapore</option>
+        <option value="Thailand">Thailand</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="United States of America">United States of America</option>
+        <option value="Zimbabwe">Zimbabwe</option>
+     </select><br><br>
+  <label for="matches">Matches: </label>
+    <select name="matches" id="matches" style="height:30px;">
+        <option disabled selected value> -- select an option -- </option>
+        {% for match in matches %}
+           <option value="{{ match.id }}" >{{ match.name }}</option>
+        {% endfor %}
+    </select><br><br>
+   <label for="run">Run: </label>
+   <input type="text" id="run" name="run"><br><br>
+    <label for="highest_scores">Highest Scores: </label>
+   <input type="text" id="highest_scores" name="highest_scores"><br><br>
+<!--    <label for="team">Team: </label>-->
+<!--    <select name="team" id="team" style="height:30px;">-->
+<!--        <option disabled selected value> &#45;&#45; select an option &#45;&#45; </option>-->
+<!--        {% for team in teams %}-->
+<!--           <option value="{{ team.identifier }}" >{{ team.teamName }}</option>-->
+<!--        {% endfor %}-->
+<!--    </select>-->
+    <br><br><br>
+    <input type="submit" value="Create">
+</form>
+
+<a href="{% url 'teams:index' %}">Back</a>
+
+
+
+
+

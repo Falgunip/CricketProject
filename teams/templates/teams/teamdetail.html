@@ -1,0 +1,17 @@
+
+<div style="text-align: center">
+<h1>Team Detail Information</h1>
+</div>
+
+       <img align="right" src="/media/{{t.logouri}}" style="width:200px;height:200px"><br><br>
+       <label><b>Team Name: </b></label>{{t.teamName}}<br><br>
+<!--       <div style="text-align:right"><label><b>Profile Pic: </b></label></div>-->
+       <label><b>Club State:  </b></label>{{t.club_state}}<br><br>
+       <label><b>Players: </b></label><br><br>
+              {% for player in t.players.all %}
+                   <li><a href="{% url 'players:playerdetail' player.identifier %}">{{player.firstName}} {{player.lastName}}</a></li>
+              {% endfor %}<br><br>
+
+<a href="{% url 'teams:index' %}">Back</a>
+
+

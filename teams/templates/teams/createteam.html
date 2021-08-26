@@ -1,0 +1,24 @@
+<div style="text-align:center">
+  <h1>Create Team</h1>
+</div>
+
+<form action="{% url 'teams:save' %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <label for="teamName">Team Name: </label>
+  <input type="text" id="teamName" name="teamName"><br><br>
+  <label for="logouri">Logo: </label>
+  <input type="file" id="logouri" name="logouri"><br><br>
+  <label for="club_state">Club State: </label>
+  <input type="text" id="club_state" name="club_state"><br><br>
+    <label for="players" id="result">Players: </label>
+   <select name="players" id="players" multiple>
+<!--        <option disabled selected value> &#45;&#45; select an option &#45;&#45; </option>-->
+        {% for player in players %}
+           <option value="{{ player.identifier }}" >{{ player.firstName }} {{ player.lastName }}</option>
+        {% endfor %}
+    </select><br><br><br>
+    <input type="submit" value="Create">
+</form>
+
+<a href="{% url 'teams:index' %}">Back</a><br><br>
+<a href="{% url 'players:createplayer' %}">Create Player</a>
